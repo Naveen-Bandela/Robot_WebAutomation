@@ -1,0 +1,9 @@
+{
+    "login": {
+      "url": "https://admin-utkarshbank.raptorx.ai/login",
+      "browser": "Chrome",
+      "headless": true,
+      "username": "admin@utkarshbank.com",
+      "password": "12121"
+    }
+  }

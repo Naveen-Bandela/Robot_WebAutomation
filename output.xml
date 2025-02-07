@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.10.0 on win32)" generated="2025-02-07T12:36:20.528663" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="D:\Utkarshbank-RobotFramework\tests\login.robot">
+<kw name="Open Browser To Login Page" owner="LoginKeywords" type="SETUP">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-07T12:36:21.108651" level="INFO" html="true">Getting file '&lt;a href="file://D:\Utkarshbank-RobotFramework\testdata.json"&gt;D:\Utkarshbank-RobotFramework\testdata.json&lt;/a&gt;'.</msg>
+<msg time="2025-02-07T12:36:21.108651" level="INFO">${data} = {
+    "login": {
+      "url": "https://admin-utkarshbank.raptorx.ai/login",
+      "browser": "Chrome",
+      "headless": true,
+      "username": "admin@utkarshbank.com",
+      "password": "12121"
+    ...</msg>
+<var>${data}</var>
+<arg>${TEST_DATA_FILE}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.108651" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.114155" level="INFO">${json} = {'login': {'url': 'https://admin-utkarshbank.raptorx.ai/login', 'browser': 'Chrome', 'headless': True, 'username': 'admin@utkarshbank.com', 'password': '12121'}}</msg>
+<var>${json}</var>
+<arg>json.loads($data)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.108651" elapsed="0.005504"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.114155" level="INFO">${URL} = https://admin-utkarshbank.raptorx.ai/login</msg>
+<var>${URL}</var>
+<arg>${json["login"]["url"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.114155" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.114155" level="INFO">${BROWSER} = Chrome</msg>
+<var>${BROWSER}</var>
+<arg>${json["login"]["browser"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.114155" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.116515" level="INFO">${USERNAME} = admin@utkarshbank.com</msg>
+<var>${USERNAME}</var>
+<arg>${json["login"]["username"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.114155" elapsed="0.002360"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.118711" level="INFO">${PASSWORD} = 12121</msg>
+<var>${PASSWORD}</var>
+<arg>${json["login"]["password"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.116515" elapsed="0.002196"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.120296" level="INFO">${HEADLESS} = True</msg>
+<var>${HEADLESS}</var>
+<arg>${json["login"].get("headless", False)}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.118711" elapsed="0.001585"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.121386" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E4509FD0C0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>selenium.webdriver.ChromeOptions()</arg>
+<arg>selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.121386" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.121386" elapsed="0.001038"/>
+</kw>
+<arg>"${HEADLESS}" == "True"</arg>
+<arg>Call Method</arg>
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.121386" elapsed="0.001038"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.122424" elapsed="0.000394"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.122818" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.122818" elapsed="0.000000"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.124515" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-07T12:36:21.124515" level="INFO">Loaded test data: {'login': {'url': 'https://admin-utkarshbank.raptorx.ai/login', 'browser': 'Chrome', 'headless': True, 'username': 'admin@utkarshbank.com', 'password': '12121'}}</msg>
+<arg>Loaded test data: ${json}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.124515" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:21.125578" level="INFO">Opening browser 'Chrome' to base url 'https://admin-utkarshbank.raptorx.ai/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-07T12:36:21.125578" elapsed="3.813450"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-07T12:36:24.940077" elapsed="0.053710"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${txtEmail}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-07T12:36:24.993787" elapsed="0.027130"/>
+</kw>
+<status status="PASS" start="2025-02-07T12:36:21.103317" elapsed="3.917600"/>
+</kw>
+<test id="s1-t1" name="Login With Valid Credentials" line="16">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-02-07T12:36:25.022204" level="INFO" html="true">Getting file '&lt;a href="file://D:\Utkarshbank-RobotFramework\testdata.json"&gt;D:\Utkarshbank-RobotFramework\testdata.json&lt;/a&gt;'.</msg>
+<msg time="2025-02-07T12:36:25.023427" level="INFO">${data} = {
+    "login": {
+      "url": "https://admin-utkarshbank.raptorx.ai/login",
+      "browser": "Chrome",
+      "headless": true,
+      "username": "admin@utkarshbank.com",
+      "password": "12121"
+    ...</msg>
+<var>${data}</var>
+<arg>${TEST_DATA_FILE}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.022204" elapsed="0.001223"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-07T12:36:25.024432" level="INFO">${json} = {'login': {'url': 'https://admin-utkarshbank.raptorx.ai/login', 'browser': 'Chrome', 'headless': True, 'username': 'admin@utkarshbank.com', 'password': '12121'}}</msg>
+<var>${json}</var>
+<arg>json.loads($data)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.024432" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:25.026372" level="INFO">${USERNAME} = admin@utkarshbank.com</msg>
+<var>${USERNAME}</var>
+<arg>${json["login"]["username"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.024432" elapsed="0.001940"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:25.027411" level="INFO">${PASSWORD} = 12121</msg>
+<var>${PASSWORD}</var>
+<arg>${json["login"]["password"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.026372" elapsed="0.001039"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-02-07T12:36:25.029081" level="INFO">${HEADLESS} = True</msg>
+<var>${HEADLESS}</var>
+<arg>${json["login"]["headless"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.027411" elapsed="0.001670"/>
+</kw>
+<kw name="Enter Credentials And Login" owner="LoginKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:25.030198" level="INFO">Typing text 'admin@utkarshbank.com' into text field 'xpath://input[@id='email']'.</msg>
+<arg>${txtEmail}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.030198" elapsed="0.160347"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:25.190545" level="INFO">Typing text '12121' into text field 'xpath://input[@id='password']'.</msg>
+<arg>${txtPassowrd}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.190545" elapsed="0.106039"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:25.296584" level="INFO">Clicking element 'xpath://div[@class='login-btn']'.</msg>
+<arg>${btnLogin}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.296584" elapsed="0.090549"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${headerDashboard}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-07T12:36:25.387133" elapsed="0.696379"/>
+</kw>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-02-07T12:36:25.029081" elapsed="1.054431"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${headerDashboard}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.084187" elapsed="0.004622"/>
+</kw>
+<kw name="Verify Dashboard Page" owner="LoginKeywords">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:26.135387" level="INFO">Element 'xpath://div[@class='page-heading']' is displayed.</msg>
+<arg>${headerDashboard}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.088809" elapsed="0.046578"/>
+</kw>
+<status status="PASS" start="2025-02-07T12:36:26.088809" elapsed="0.046983"/>
+</kw>
+<doc>Verify that user can log in successfully with valid credentials</doc>
+<tag>priority=1</tag>
+<status status="PASS" start="2025-02-07T12:36:25.020917" elapsed="1.114875"/>
+</test>
+<test id="s1-t2" name="Navigate To Data Integration" line="29">
+<kw name="Click On Data Integration" owner="LoginKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:26.139410" level="INFO">Clicking element 'xpath://div[text()='Data Integrations']'.</msg>
+<arg>${lnkDataIntegration}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.139410" elapsed="0.170464"/>
+</kw>
+<status status="PASS" start="2025-02-07T12:36:26.137969" elapsed="0.173122"/>
+</kw>
+<doc>Click on Data Integration and verify</doc>
+<tag>priority=2</tag>
+<status status="PASS" start="2025-02-07T12:36:26.136970" elapsed="0.174121"/>
+</test>
+<test id="s1-t3" name="Upload Document" line="34">
+<kw name="Upload A Document" owner="LoginKeywords">
+<kw name="Normalize Path" owner="OperatingSystem">
+<msg time="2025-02-07T12:36:26.313104" level="INFO">${CANONICAL_PATH} = D:\Utkarshbank-RobotFramework\testdata\Sample.csv</msg>
+<var>${CANONICAL_PATH}</var>
+<arg>${file_path}</arg>
+<doc>Normalizes the given path.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.313104" elapsed="0.001036"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-02-07T12:36:26.314140" level="INFO">Sending D:\Utkarshbank-RobotFramework\testdata\Sample.csv to browser.</msg>
+<arg>${inputCustomerDataFile}</arg>
+<arg>${CANONICAL_PATH}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.314140" elapsed="0.052658"/>
+</kw>
+<arg>D:\\Utkarshbank-RobotFramework\\tests/../testdata/Sample.csv</arg>
+<status status="PASS" start="2025-02-07T12:36:26.313104" elapsed="0.053694"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=D:\\Utkarshbank-RobotFramework\\tests</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.366798" elapsed="0.000000"/>
+</kw>
+<doc>Upload a file from local system</doc>
+<tag>priority=3</tag>
+<status status="PASS" start="2025-02-07T12:36:26.312100" elapsed="0.055962"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-07T12:36:26.369591" elapsed="2.176168"/>
+</kw>
+<doc>Test login functionality of Utkarsh Bank application</doc>
+<status status="PASS" start="2025-02-07T12:36:20.528663" elapsed="8.017096"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">priority=1</stat>
+<stat pass="1" fail="0" skip="0">priority=2</stat>
+<stat pass="1" fail="0" skip="0">priority=3</stat>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="3" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "d-biehl.robotcode",
+        "robocorp.robotframework-lsp",
+        "robocorp.robocorp-code",
+        "ms-python.python"
+    ]
+}

@@ -1,0 +1,7 @@
+txtEmail="xpath://input[@id='email']"
+txtPassowrd="xpath://input[@id='password']"
+btnLogin="xpath://div[@class='login-btn']"
+headerDashboard="xpath://div[@class='page-heading']"
+lnkDataIntegration="xpath://div[text()='Data Integrations']"
+inputCustomerDataFile="xpath://input[@id='file']"
+btnUpload="xpath://button[text()='Upload from computer']"
