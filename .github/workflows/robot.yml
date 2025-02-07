@@ -30,3 +30,9 @@ jobs:
         with:
           name: Robot Results
           path: results/
+      - name: Send Notification to Slack
+        if: always()
+        run: |
+          curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"🚀 Robot Framework tests have completed! Check the results."}' \
+          ${{ secrets.SLACK_WEBHOOK_URL }}
